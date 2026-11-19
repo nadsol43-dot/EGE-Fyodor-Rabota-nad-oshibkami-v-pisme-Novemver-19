@@ -1,0 +1,693 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Space Exploration – Grammar & Vocabulary Practice</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  background: linear-gradient(135deg, #101b3c, #263b65);
+  color: #25314c;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 950px;
+  margin: auto;
+  padding: 25px 18px 50px;
+}
+
+.hero {
+  background: linear-gradient(120deg, #283d79, #5968a9);
+  color: white;
+  border-radius: 22px;
+  padding: 35px 25px;
+  text-align: center;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 25px #0003;
+}
+
+.hero h1 {
+  font-size: 30px;
+  margin: 0 0 8px;
+}
+
+.hero p { margin: 5px; }
+
+.emoji { font-size: 35px; }
+
+.progress {
+  background: #fff;
+  border-radius: 14px;
+  padding: 15px 20px;
+  margin-bottom: 22px;
+}
+
+.progress-bar {
+  background: #e6eaf3;
+  height: 12px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progress-fill {
+  background: #46b99b;
+  height: 100%;
+  width: 0%;
+  transition: .3s;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 22px;
+  box-shadow: 0 5px 18px #0002;
+}
+
+.card h2 {
+  color: #354b8d;
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.instruction {
+  color: #65718b;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+.question {
+  padding: 13px 12px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.question:last-child { border: none; }
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 10px;
+}
+
+.option {
+  border: 1px solid #cbd3e5;
+  border-radius: 9px;
+  padding: 7px 13px;
+  cursor: pointer;
+  background: #f8f9fd;
+  font-size: 15px;
+}
+
+.option:hover { background: #e8edff; }
+
+.option.selected {
+  background: #dce5ff;
+  border: 2px solid #526bb3;
+  padding: 6px 12px;
+}
+
+input[type=text], textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #cbd3e5;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 15px;
+  margin-top: 8px;
+  background: #fbfcff;
+}
+
+textarea {
+  min-height: 75px;
+  resize: vertical;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid #8c9de0;
+}
+
+.correct {
+  background: #e4f7ed !important;
+  border-color: #36a879 !important;
+}
+
+.incorrect {
+  background: #fff0ed !important;
+  border-color: #e27b69 !important;
+}
+
+.feedback {
+  font-size: 14px;
+  margin-top: 6px;
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 11px 19px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 8px 5px 5px 0;
+  transition: .2s;
+}
+
+button:hover { transform: translateY(-2px); }
+
+.check {
+  background: #435a9d;
+  color: white;
+}
+
+.reset {
+  background: #e9edf7;
+  color: #34436d;
+}
+
+.teacher {
+  background: #f1f3fa;
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 18px;
+}
+
+.teacher summary {
+  cursor: pointer;
+  color: #354b8d;
+  font-weight: bold;
+}
+
+.teacher li { margin: 6px 0; }
+
+.translation {
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #f8f9fd;
+  border-radius: 10px;
+}
+
+.wordbank {
+  background: #eef1ff;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  color: #354b8d;
+}
+
+.challenge {
+  background: #f4f0ff;
+  border-left: 5px solid #8d75c6;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.footer {
+  text-align: center;
+  color: #dce3ff;
+  padding: 20px;
+  font-size: 13px;
+}
+
+@media(max-width:600px) {
+  .hero h1 { font-size: 24px; }
+  .card { padding: 17px; }
+  .options { gap: 6px; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header class="hero">
+  <div class="emoji">🚀 🌍 🌙</div>
+  <h1>SPACE EXPLORATION</h1>
+  <p>Grammar & Vocabulary Practice</p>
+  <p>English Revision Worksheet</p>
+</header>
+
+<div class="progress">
+  <strong>Your progress</strong>
+  <span id="progressText">0 exercises checked</span>
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+</div>
+
+<!-- EXERCISE 1 -->
+
+<section class="card" id="ex1">
+<h2>⭐ Exercise 1. Choose the correct option</h2>
+<p class="instruction">Choose the correct word or expression.</p>
+
+<div id="mcq"></div>
+<button class="check" onclick="checkMCQ()">Check answers</button>
+<button class="reset" onclick="resetMCQ()">Try again</button>
+<div id="mcqScore" class="feedback"></div>
+</section>
+
+<!-- EXERCISE 2 -->
+
+<section class="card" id="ex2">
+<h2>✏️ Exercise 2. Correct the mistakes</h2>
+<p class="instruction">Rewrite each sentence correctly. Pay attention to grammar and vocabulary.</p>
+<div id="corrections"></div>
+<button class="check" onclick="checkCorrections()">Check answers</button>
+<button class="reset" onclick="resetCorrections()">Clear answers</button>
+<div id="correctionScore" class="feedback"></div>
+
+<details class="teacher">
+<summary>Teacher's answer key</summary>
+<ol id="correctionKey"></ol>
+</details>
+</section>
+
+<!-- EXERCISE 3 -->
+
+<section class="card" id="ex3">
+<h2>🪐 Exercise 3. Complete the sentences</h2>
+<p class="instruction">Use the words in brackets in the correct form.</p>
+<div id="gaps"></div>
+<button class="check" onclick="checkGaps()">Check answers</button>
+<button class="reset" onclick="resetGaps()">Try again</button>
+<div id="gapScore" class="feedback"></div>
+</section>
+
+<!-- EXERCISE 4 -->
+
+<section class="card" id="ex4">
+<h2>🌟 Exercise 4. Translate into English</h2>
+<p class="instruction">Translate the sentences. Try to use the expressions from the original letter.</p>
+<div id="translations"></div>
+
+<details class="teacher">
+<summary>Teacher's suggested answers</summary>
+<ol id="translationKey"></ol>
+</details>
+</section>
+
+<!-- EXERCISE 5 -->
+
+<section class="card" id="ex5">
+<h2>💡 Exercise 5. Finish the sentences</h2>
+<p class="instruction">Complete the sentences with your own ideas.</p>
+<div id="finish"></div>
+</section>
+
+<!-- EXERCISE 6 -->
+
+<section class="card" id="ex6">
+<h2>🚀 Exercise 6. Mini writing challenge</h2>
+
+<div class="challenge">
+<strong>Your task:</strong>
+<p>Write an email (80–100 words) to your English-speaking friend about space exploration.</p>
+Include:
+<ul>
+<li>Why space programmes are important.</li>
+<li>What people can find on other planets.</li>
+<li>Which space museum you have visited.</li>
+<li>What topic you would choose for a school project.</li>
+</ul>
+</div>
+
+<div class="wordbank">
+<strong>🌙 Use these expressions:</strong>
+<ul>
+<li>establish colonies</li>
+<li>the progress of humanity</li>
+<li>solve the problem of</li>
+<li>one of the most popular</li>
+<li>several times</li>
+<li>If I had to choose...</li>
+<li>I would be interested in...</li>
+</ul>
+</div>
+
+<textarea id="email" rows="10" placeholder="Dear ...&#10;&#10;Thanks for your email..."></textarea>
+<p id="wordCount">Word count: 0</p>
+<button class="reset" onclick="clearEmail()">Clear text</button>
+</section>
+
+<!-- TEACHER KEY -->
+
+<section class="card">
+<h2>🔑 Teacher's answer key</h2>
+<p class="instruction">Open this section to see all the answers.</p>
+
+<details class="teacher">
+<summary>Exercise 1 – Multiple choice</summary>
+<ol>
+<li>establish</li>
+<li>to live</li>
+<li>solve</li>
+<li>platinum</li>
+<li>several times</li>
+<li>the most popular</li>
+<li>chose</li>
+<li>interested</li>
+<li>space</li>
+<li>researching</li>
+</ol>
+</details>
+
+<details class="teacher">
+<summary>Exercise 2 – Correct the mistakes</summary>
+<ol>
+<li>We are going to establish colonies on Mars.</li>
+<li>We need more space to live.</li>
+<li>We can find gold and silver on other planets.</li>
+<li>I've been there several times.</li>
+<li>It is one of the most popular museums.</li>
+<li>If I chose a topic, I would choose astronomy.</li>
+<li>I would be interested in space exploration.</li>
+<li>I want to make a project about space.</li>
+<li>I am interested in researching the Solar System.</li>
+<li>This will help us solve the problem of overpopulation.</li>
+</ol>
+</details>
+
+<details class="teacher">
+<summary>Exercise 3 – Gap fill</summary>
+<ol>
+<li>establish</li>
+<li>to live</li>
+<li>find</li>
+<li>several</li>
+<li>the most popular</li>
+<li>had to</li>
+<li>interested</li>
+<li>learning</li>
+<li>its</li>
+<li>future</li>
+</ol>
+</details>
+
+</section>
+
+<footer class="footer">
+  SPACE EXPLORATION • ENGLISH PRACTICE
+  <br>Keep learning and reach for the stars! ✨
+</footer>
+
+</div>
+
+<script>
+const mcqData = [
+["We are going to (do / establish / make) colonies on Mars.",
+ ["do","establish","make"],1],
+["We need more space (living / to live / for live).",
+ ["living","to live","for live"],1],
+["This will help us (solve / to solving / solving) the problem.",
+ ["solve","to solving","solving"],0],
+["We can find (a platinum / platinum / the platinum) on other planets.",
+ ["a platinum","platinum","the platinum"],1],
+["I've been there (several times / several time / many time).",
+ ["several times","several time","many time"],0],
+["The Space Museum is one of (the most popular / most popular / the popularest) museums.",
+ ["the most popular","most popular","the popularest"],0],
+["If I (would choose / chose / will choose) a topic, I would choose space exploration.",
+ ["would choose","chose","will choose"],1],
+["I would be (interesting / interested / interest) in astronomy.",
+ ["interesting","interested","interest"],1],
+["I want to learn more about (the space / space / a space).",
+ ["the space","space","a space"],1],
+["I am interested in (research / researching / researched) the Solar System.",
+ ["research","researching","researched"],1]
+];
+
+const correctionData = [
+"We are going to establish colonies on Mars.",
+"We need more space to live.",
+"We can find gold and silver on other planets.",
+"I've been there several times.",
+"It is one of the most popular museums.",
+"If I chose a topic, I would choose astronomy.",
+"I would be interested in space exploration.",
+"I want to make a project about space.",
+"I am interested in researching the Solar System.",
+"This will help us solve the problem of overpopulation."
+];
+
+const gapData = [
+["Scientists hope to ______ colonies on Mars. (ESTABLISH)","establish"],
+["People need more space ______ in the future. (LIVE)","to live"],
+["Space exploration can help us ______ new resources. (FIND)","find"],
+["I've visited the museum ______ times. (SEVERAL)","several"],
+["It is one of ______ museums in Russia. (POPULAR)","the most popular"],
+["If I ______ a school project, I would choose astronomy. (HAVE TO)","had to"],
+["I would be ______ in studying other planets. (INTEREST)","interested"],
+["I enjoy ______ about the Solar System. (LEARN)","learning"],
+["Scientists want to study ______ structure of the Solar System. (IT)","its"],
+["We should think about ______ overpopulation. (FUTURE)","future"]
+];
+
+const translationData = [
+["Мы собираемся создавать колонии на Марсе.",
+ "We are going to establish colonies on Mars."],
+["Нам нужно больше места для жизни.",
+ "We need more space to live."],
+["Это поможет нам решить проблему перенаселения.",
+ "This will help us solve the problem of overpopulation."],
+["На других планетах мы можем найти золото, серебро и платину.",
+ "We can find gold, silver and platinum on other planets."],
+["Я был там несколько раз.",
+ "I've been there several times."],
+["Это один из самых популярных музеев в России.",
+ "It is one of the most popular museums in Russia."],
+["Если бы мне нужно было выбрать тему проекта, я бы выбрал космос.",
+ "If I had to choose a project topic, I would choose space."],
+["Мне было бы интересно исследовать Солнечную систему.",
+ "I would be interested in researching the Solar System."],
+["Я интересуюсь космосом.",
+ "I am interested in space."],
+["Я хочу изучить строение Солнечной системы.",
+ "I want to study the structure of the Solar System."]
+];
+
+const finishData = [
+"I think space exploration is important because...",
+"In the future, people may establish colonies...",
+"We need more space to...",
+"One of the most interesting planets is...",
+"I've visited ... several times.",
+"If I had to choose a school project topic, I would...",
+"I would be interested in researching...",
+"I think future overpopulation..."
+];
+
+function renderMCQ() {
+  const root = document.getElementById("mcq");
+  mcqData.forEach((q,i) => {
+    const div = document.createElement("div");
+    div.className = "question";
+    div.innerHTML = `<strong>${i+1}. ${q[0]}</strong>
+      <div class="options">
+      ${q[1].map((o,j)=>`<button class="option" type="button"
+        data-q="${i}" data-v="${j}" onclick="selectOption(this)">${o}</button>`).join("")}
+      </div><div class="feedback" id="mcqfb${i}"></div>`;
+    root.appendChild(div);
+  });
+}
+
+function selectOption(btn) {
+  const q = btn.dataset.q;
+  document.querySelectorAll(`[data-q="${q}"]`).forEach(b=>b.classList.remove("selected"));
+  btn.classList.add("selected");
+}
+
+function checkMCQ() {
+  let score=0;
+  mcqData.forEach((q,i)=>{
+    const selected=document.querySelector(`.option[data-q="${i}"].selected`);
+    const fb=document.getElementById("mcqfb"+i);
+    document.querySelectorAll(`[data-q="${i}"]`).forEach(b=>{
+      b.classList.remove("correct","incorrect");
+    });
+    if(selected && Number(selected.dataset.v)===q[2]){
+      score++;
+      selected.classList.add("correct");
+      fb.textContent="✓ Correct!";
+      fb.style.color="#21865b";
+    } else {
+      if(selected) selected.classList.add("incorrect");
+      fb.textContent="✗ Correct answer: "+q[1][q[2]];
+      fb.style.color="#c45b4e";
+    }
+  });
+  document.getElementById("mcqScore").textContent=`Your score: ${score}/10`;
+  markDone(1);
+}
+
+function resetMCQ(){
+  document.querySelectorAll("#mcq .option").forEach(b=>b.classList.remove("selected","correct","incorrect"));
+  document.querySelectorAll("#mcq .feedback").forEach(f=>f.textContent="");
+  document.getElementById("mcqScore").textContent="";
+}
+
+function normalize(s){
+  return s.toLowerCase().trim().replace(/[’‘]/g,"'")
+    .replace(/[.!?]/g,"").replace(/\s+/g," ");
+}
+
+function renderCorrections(){
+  const root=document.getElementById("corrections");
+  correctionData.forEach((a,i)=>{
+    const div=document.createElement("div");
+    div.className="question";
+    div.innerHTML=`<strong>${i+1}. ${[
+"We are going to do colonies on Mars.",
+"We need more space for living.",
+"We can find a gold and a silver on other planets.",
+"I've been there several for several times.",
+"It is the most one of the most popular museums.",
+"If I would choose a topic, I would choose astronomy.",
+"I would be interesting in space exploration.",
+"I want to make a project about the space.",
+"I am interested in research the Solar System.",
+"This will help us to solving the problem of overpopulation."
+][i]}</strong>
+<input type="text" id="corr${i}" placeholder="Write the corrected sentence...">
+<div class="feedback" id="corrfb${i}"></div>`;
+    root.appendChild(div);
+    document.getElementById("correctionKey").innerHTML += `<li>${a}</li>`;
+  });
+}
+
+function checkCorrections(){
+  let score=0;
+  correctionData.forEach((a,i)=>{
+    const el=document.getElementById("corr"+i);
+    const fb=document.getElementById("corrfb"+i);
+    if(normalize(el.value)===normalize(a)){
+      score++;
+      el.className="correct";
+      fb.textContent="✓ Correct!";
+      fb.style.color="#21865b";
+    } else {
+      el.className="incorrect";
+      fb.textContent="Suggested answer: "+a;
+      fb.style.color="#c45b4e";
+    }
+  });
+  document.getElementById("correctionScore").textContent=`Exact-match score: ${score}/10. Alternative correct wording may also be accepted by the teacher.`;
+  markDone(2);
+}
+
+function resetCorrections(){
+  correctionData.forEach((a,i)=>{
+    document.getElementById("corr"+i).value="";
+    document.getElementById("corr"+i).className="";
+    document.getElementById("corrfb"+i).textContent="";
+  });
+  document.getElementById("correctionScore").textContent="";
+}
+
+function renderGaps(){
+  const root=document.getElementById("gaps");
+  gapData.forEach((q,i)=>{
+    const div=document.createElement("div");
+    div.className="question";
+    div.innerHTML=`<strong>${i+1}. ${q[0]}</strong>
+      <input type="text" id="gap${i}" placeholder="Your answer...">
+      <div class="feedback" id="gapfb${i}"></div>`;
+    root.appendChild(div);
+  });
+}
+
+function checkGaps(){
+  let score=0;
+  gapData.forEach((q,i)=>{
+    const el=document.getElementById("gap"+i);
+    const fb=document.getElementById("gapfb"+i);
+    if(normalize(el.value)===normalize(q[1])){
+      score++;
+      el.className="correct";
+      fb.textContent="✓ Correct!";
+      fb.style.color="#21865b";
+    } else {
+      el.className="incorrect";
+      fb.textContent="Correct answer: "+q[1];
+      fb.style.color="#c45b4e";
+    }
+  });
+  document.getElementById("gapScore").textContent=`Your score: ${score}/10`;
+  markDone(3);
+}
+
+function resetGaps(){
+  gapData.forEach((q,i)=>{
+    document.getElementById("gap"+i).value="";
+    document.getElementById("gap"+i).className="";
+    document.getElementById("gapfb"+i).textContent="";
+  });
+  document.getElementById("gapScore").textContent="";
+}
+
+function renderTranslations(){
+  const root=document.getElementById("translations");
+  translationData.forEach((q,i)=>{
+    const div=document.createElement("div");
+    div.className="translation";
+    div.innerHTML=`<strong>${i+1}. ${q[0]}</strong>
+      <textarea rows="2" placeholder="Your English translation..."></textarea>`;
+    root.appendChild(div);
+    document.getElementById("translationKey").innerHTML += `<li>${q[1]}</li>`;
+  });
+}
+
+function renderFinish(){
+  const root=document.getElementById("finish");
+  finishData.forEach((q,i)=>{
+    const div=document.createElement("div");
+    div.className="question";
+    div.innerHTML=`<strong>${i+1}. ${q}</strong>
+      <textarea rows="2" placeholder="Complete the sentence..."></textarea>`;
+    root.appendChild(div);
+  });
+}
+
+let completed = new Set();
+
+function markDone(n){
+  completed.add(n);
+  document.getElementById("progressText").textContent =
+    completed.size+" of 6 exercises checked";
+  document.getElementById("progressFill").style.width =
+    (completed.size/6*100)+"%";
+}
+
+function clearEmail(){
+  document.getElementById("email").value="";
+  updateCount();
+}
+
+function updateCount(){
+  const text=document.getElementById("email").value.trim();
+  const count=text ? text.split(/\s+/).length : 0;
+  document.getElementById("wordCount").textContent="Word count: "+count+
+    (count>=80 && count<=100 ? " ✓ Great!" : "");
+}
+
+document.getElementById("email").addEventListener("input",updateCount);
+
+renderMCQ();
+renderCorrections();
+renderGaps();
+renderTranslations();
+renderFinish();
+</script>
+
+</body>
+</html>
